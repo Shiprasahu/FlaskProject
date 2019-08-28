@@ -5,7 +5,7 @@ from flask import request
 from app.forms import LoginForm, RegisterForm
 
 from flask_sqlalchemy import SQLAlchemy
-from app.models import Employee
+from app.models import User
 
 app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///PersonData.sqlite3'

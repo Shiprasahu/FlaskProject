@@ -20,7 +20,7 @@ from flask_migrate import Migrate
 app = Flask(__name__)
  
 app.config.from_object(Config)
-db = SQLAlchemy(app_var)
+db = SQLAlchemy(app)
 migrate = Migrate(app, db)
  
 from . import routes,models

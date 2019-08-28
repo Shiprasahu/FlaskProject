@@ -1,8 +1,6 @@
-
-[Yesterday 19:29] Sthita
     
 
-from Project import db
+from app import db
 from sqlalchemy import Column,Integer,String,DateTime,ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime
@@ -13,7 +11,7 @@ class User(db.Model):
     id=Column(Integer,primary_key=True)
     username=Column(String(64),index=True , unique=True)
     email=Column(String(120),index=True , unique=True)
-    post=relationship('Post',backref='author',lazy='dynamic')
+    post=relationship('Post',backref='users',lazy='dynamic')
     password_hash=Column(String(128))
  
 def __repr__(self):

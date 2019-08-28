@@ -44,15 +44,15 @@ def signup():
                 #flash('ERROR! Email ({}) already exists.'.format(form.email.data), 'error')
         #return redirect('/register')
     #return render_template('register.html', titles='Register', form = form)
-    if request.method == 'POST':
-        if not form['username'] or not form['password'] or not request.form['name'] or not form['email']:
-            flash('Please enter all the fields', 'error')
-        else:
-            persondata = Employee(form['username'], form['password'], form['name'], form['email'])
-            db.session.add(persondata)
-            db.session.commit()
-            flash('Record was successfully added')
-            return redirect('/login')
+    ##if request.method == 'POST':
+        ##if not form['username'] or not form['password'] or not form['name'] or not form['email']:
+            ##flash('Please enter all the fields', 'error')
+        ##else:
+            ##persondata = Employee(form['username'], form['password'], form['name'], form['email'])
+            ##db.session.add(persondata)
+            ##db.session.commit()
+            ##flash('Record was successfully added')
+            ##return redirect('/login')
     return render_template('register.html', titles = 'Register', form = form)
 
 

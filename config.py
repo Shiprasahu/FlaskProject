@@ -1,17 +1,12 @@
 
 
 import os
-
-from flask_sqlalchemy import SQLAlchemy
-
-basedir = os.path.abspath(os.path.dirname(__file__))
-
+ 
+base_dir=os.path.abspath(os.path.dirname(__file__))
+ 
 class Config(object):
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
-    SQLALCHEMY_ECHO = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'sqlite:///' + os.path.join(basedir, 'flaskapp.db')
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
-
-#db = SQLAlchemy(app)
-
+    #SQLALCHEMY_DATABASE_URI='sqllite:///'+os.path.join(base_dir,'blogapp.db')
+    SQLALCHEMY_DATABASE_URI='sqlite:///flaskblog.db'
+ 
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
+    SECRET_KEY= os.environ.get('SECRET_KEY') or 'you will never know'
